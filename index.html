@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>WC 2026 Predictor · Afla Rishad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-dots"></div>
+
+<div id="app">
+
+<!-- ============================================================ AUTH PAGE -->
+<div id="page-auth">
+  <div class="auth-wrap">
+    <div class="auth-brand">
+      <div class="eyebrow">⚽ Prediction Challenge</div>
+      <h1>World Cup<br><em>2026</em> Predictor</h1>
+      <p>Build your full bracket — group stage to the final. USA · Canada · Mexico.</p>
+    </div>
+    <div class="auth-card">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="inputName" placeholder="e.g. Afla Rishad" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>Favorite Team</label>
+        <select id="inputTeam">
+          <option value="">Choose your team...</option>
+        </select>
+      </div>
+
+      <button class="btn-cta" onclick="login()">
+        Start Predicting <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ MAIN APP -->
+<div id="page-main" class="hidden">
+
+  <!-- Header -->
+  <header class="hdr">
+    <div class="hdr-inner">
+      <div class="hdr-brand">
+        <span class="trophy">🏆</span>
+        <div class="name">WC <span>2026</span></div>
+      </div>
+      <nav class="hdr-nav">
+        <button class="hdr-nav-btn active" onclick="setPage('dashboard')">Dashboard</button>
+        <button class="hdr-nav-btn" onclick="setPage('groups')">Groups</button>
+        <button class="hdr-nav-btn" onclick="setPage('bracket')">Bracket</button>
+        <button class="hdr-nav-btn" onclick="setPage('stats')">Stats</button>
+      </nav>
+      <div class="hdr-right">
+        <div class="hdr-user-info">
+          <div class="hdr-username" id="hdrName"></div>
+          <div class="hdr-pct" id="hdrPct"></div>
+        </div>
+        <div class="avatar" id="hdrAvatar"></div>
+        <button class="hdr-logout-btn" onclick="logout()" title="Logout">🚪</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pages -->
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div id="pg-dashboard">
+      <div id="championDisplay"></div>
+      <div class="hero-banner" id="heroBanner">
+        <div class="hero-text">
+          <div class="greeting">Welcome back,</div>
+          <h2 id="heroName">Predictor</h2>
+          <p id="heroSub">Click match teams to set your picks</p>
+        </div>
+        <div class="progress-ring-wrap">
+          <div class="pct-num" id="heroPct">0%</div>
+          <div class="pct-lbl">Complete</div>
+        </div>
+      </div>
+      <div class="stats-grid" id="dashStats"></div>
+      <div class="action-bar" style="margin-top:1.25rem">
+        <input class="search-box" id="searchBox" placeholder="🔍 Search teams..." oninput="doSearch()">
+        <button class="action-btn" onclick="undoLast()">↩ Undo</button>
+        <button class="action-btn" onclick="shareLink()">🔗 Share</button>
+        <button class="action-btn" onclick="exportPredictions()">📤 Export</button>
+        <button class="action-btn danger" onclick="resetAll()">🗑 Reset</button>
+      </div>
+      <div class="section-head" style="margin-top:1.5rem">
+        <h2>Group Overview</h2>
+        <span class="tag-outline">All Groups</span>
+      </div>
+      <div class="dash-groups" id="dashGroups"></div>
+    </div>
+
+    <!-- GROUPS -->
+    <div id="pg-groups" class="hidden">
+      <div class="section-head">
+        <h2>Group Stage</h2>
+        <span class="tag">Pick Winners</span>
+      </div>
+      <div class="action-bar">
+        <input class="search-box" id="searchBox2" placeholder="🔍 Search teams..." oninput="doSearch2()">
+        <button class="action-btn" onclick="undoLast()">↩ Undo</button>
+      </div>
+      <div class="groups-grid" id="groupsGrid"></div>
+    </div>
+
+    <!-- BRACKET -->
+    <div id="pg-bracket" class="hidden">
+      <div class="section-head">
+        <h2>Knockout Bracket</h2>
+        <span class="tag">Tap to pick</span>
+      </div>
+      <div class="bracket-wrap">
+        <div class="bracket" id="bracketInner"></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div id="pg-stats" class="hidden">
+      <div class="section-head">
+        <h2>Your Stats</h2>
+      </div>
+      <div class="stats-page-grid" id="statsGrid"></div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="creator">Built by <span>Afla Rishad</span> ⚡</div>
+      <div class="sub">© 2026 · World Cup 2026 Predictor</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/AflaRishad" target="_blank">LinkedIn</a>
+      <a href="https://portfolio-red-rho-95.vercel.app/" target="_blank">Portfolio</a>
+    </div>
+  </footer>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-inner">
+      <button class="mob-btn active" onclick="setPage('dashboard')"><span class="ico">🏠</span><span class="lbl">Home</span></button>
+      <button class="mob-btn" onclick="setPage('groups')"><span class="ico">⚽</span><span class="lbl">Groups</span></button>
+      <button class="mob-btn" onclick="setPage('bracket')"><span class="ico">🎯</span><span class="lbl">Bracket</span></button>
+      <button class="mob-btn" onclick="setPage('stats')"><span class="ico">📊</span><span class="lbl">Stats</span></button>
+    </div>
+  </nav>
+
+</div><!-- /page-main -->
+
+</div><!-- /app -->
+
+<!-- Music Player (persistent, outside pages) -->
+<div class="music-player" id="musicPlayer" style="display:none">
+  <div class="music-pill" id="musicPill" onclick="pillClick(event)">
+    <div class="music-icon" id="musicIcon">♪</div>
+    <span class="pill-track" id="pillTrack">Loading...</span>
+    <button class="pill-mini-btn play-btn" id="playBtn" onclick="event.stopPropagation(); togglePlay()">▶</button>
+    <button class="pill-mini-btn" onclick="event.stopPropagation(); nextTrack()">⏭</button>
+  </div>
+</div>
+
+<!-- Expanded Music Overlay (separate div) -->
+<div class="music-player" id="musicExpanded" style="display:none; bottom:1rem; right:1rem;">
+  <div class="music-pill expanded">
+    <div class="expand-row">
+      <div class="track-info">
+        <div class="track-title" id="expTrackName">Illuminate</div>
+        <div class="track-art" id="expTrackArt">World Cup 2026</div>
+      </div>
+      <button class="close-btn" onclick="closeExpand()">✕</button>
+    </div>
+    <div class="controls-row">
+      <button class="c-btn" onclick="prevTrack()">⏮</button>
+      <button class="c-btn" id="shuffleBtn" onclick="shuffleToggle()" title="Shuffle">🔀</button>
+      <button class="c-btn c-play" id="playBtn2" onclick="togglePlay()">▶</button>
+      <button class="c-btn" id="repeatBtn" onclick="repeatToggle()" title="Repeat">🔁</button>
+      <button class="c-btn" onclick="nextTrack()">⏭</button>
+    </div>
+    <div class="vol-row">
+      <span>🔊</span>
+      <input type="range" min="0" max="100" value="70" id="volSlider" oninput="setVol(this.value)">
+      <span id="volVal">70</span>
+    </div>
+    <div class="music-note">Add audio URLs in JS config</div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
