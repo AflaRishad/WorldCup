@@ -5,157 +5,183 @@
 // ============================================================
 const GROUPS = {
   A: [
-    {id:'mex',name:'Mexico',flag:'🇲🇽'},
-    {id:'rsa',name:'South Africa',flag:'🇿🇦'},
-    {id:'ury',name:'Uruguay',flag:'🇺🇾'},
-    {id:'can',name:'Canada',flag:'🇨🇦'}
+    { id: 'mex', name: 'Mexico', flag: 'MEX' },
+    { id: 'kor', name: 'South Korea', flag: 'KOR' },
+    { id: 'cze', name: 'Czechia', flag: 'CZE' },
+    { id: 'rsa', name: 'South Africa', flag: 'RSA' }
   ],
+
   B: [
-    {id:'arg',name:'Argentina',flag:'🇦🇷'},
-    {id:'chi',name:'Chile',flag:'🇨🇱'},
-    {id:'per',name:'Peru',flag:'🇵🇪'},
-    {id:'caf2',name:'CAF TBD',flag:'🌍'}
+    { id: 'bih', name: 'Bosnia and Herzegovina', flag: 'BIH' },
+    { id: 'can', name: 'Canada', flag: 'CAN' },
+    { id: 'qat', name: 'Qatar', flag: 'QAT' },
+    { id: 'sui', name: 'Switzerland', flag: 'SUI' }
   ],
+
   C: [
-    {id:'usa',name:'USA',flag:'🇺🇸'},
-    {id:'pan',name:'Panama',flag:'🇵🇦'},
-    {id:'bra',name:'Brazil',flag:'🇧🇷'},
-    {id:'par',name:'Paraguay',flag:'🇵🇾'}
+    { id: 'bra', name: 'Brazil', flag: 'BRA' },
+    { id: 'hai', name: 'Haiti', flag: 'HAI' },
+    { id: 'mar', name: 'Morocco', flag: 'MAR' },
+    { id: 'sco', name: 'Scotland', flag: 'SCO' }
   ],
+
   D: [
-    {id:'fra',name:'France',flag:'🇫🇷'},
-    {id:'mor',name:'Morocco',flag:'🇲🇦'},
-    {id:'bel',name:'Belgium',flag:'🇧🇪'},
-    {id:'cro',name:'Croatia',flag:'🇭🇷'}
+    { id: 'aus', name: 'Australia', flag: 'AUS' },
+    { id: 'par', name: 'Paraguay', flag: 'PAR' },
+    { id: 'tur', name: 'Türkiye', flag: 'TUR' },
+    { id: 'usa', name: 'USA', flag: 'USA' }
   ],
+
   E: [
-    {id:'ger',name:'Germany',flag:'🇩🇪'},
-    {id:'jap',name:'Japan',flag:'🇯🇵'},
-    {id:'crc',name:'Costa Rica',flag:'🇨🇷'},
-    {id:'aus',name:'Australia',flag:'🇦🇺'}
+    { id: 'cuw', name: 'Curaçao', flag: 'CUW' },
+    { id: 'ecu', name: 'Ecuador', flag: 'ECU' },
+    { id: 'ger', name: 'Germany', flag: 'GER' },
+    { id: 'civ', name: 'Ivory Coast', flag: 'CIV' }
   ],
+
   F: [
-    {id:'esp',name:'Spain',flag:'🇪🇸'},
-    {id:'civ',name:'Côte d\'Ivoire',flag:'🇨🇮'},
-    {id:'ser',name:'Serbia',flag:'🇷🇸'},
-    {id:'hun',name:'Hungary',flag:'🇭🇺'}
+    { id: 'jpn', name: 'Japan', flag: 'JPN' },
+    { id: 'ned', name: 'Netherlands', flag: 'NED' },
+    { id: 'swe', name: 'Sweden', flag: 'SWE' },
+    { id: 'tun', name: 'Tunisia', flag: 'TUN' }
   ],
+
   G: [
-    {id:'eng',name:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
-    {id:'net',name:'Netherlands',flag:'🇳🇱'},
-    {id:'tun',name:'Tunisia',flag:'🇹🇳'},
-    {id:'sen',name:'Senegal',flag:'🇸🇳'}
+    { id: 'bel', name: 'Belgium', flag: 'BEL' },
+    { id: 'egy', name: 'Egypt', flag: 'EGY' },
+    { id: 'irn', name: 'Iran', flag: 'IRN' },
+    { id: 'nzl', name: 'New Zealand', flag: 'NZL' }
   ],
+
   H: [
-    {id:'por',name:'Portugal',flag:'🇵🇹'},
-    {id:'pol',name:'Poland',flag:'🇵🇱'},
-    {id:'ngr',name:'Nigeria',flag:'🇳🇬'},
-    {id:'aze',name:'Azerbaijan',flag:'🇦🇿'}
+    { id: 'cpv', name: 'Cape Verde', flag: 'CPV' },
+    { id: 'ksa', name: 'Saudi Arabia', flag: 'KSA' },
+    { id: 'esp', name: 'Spain', flag: 'ESP' },
+    { id: 'uru', name: 'Uruguay', flag: 'URU' }
   ],
+
   I: [
-    {id:'ita',name:'Italy',flag:'🇮🇹'},
-    {id:'ecu',name:'Ecuador',flag:'🇪🇨'},
-    {id:'hon',name:'Honduras',flag:'🇭🇳'},
-    {id:'alg',name:'Algeria',flag:'🇩🇿'}
+    { id: 'fra', name: 'France', flag: 'FRA' },
+    { id: 'irq', name: 'Iraq', flag: 'IRQ' },
+    { id: 'nor', name: 'Norway', flag: 'NOR' },
+    { id: 'sen', name: 'Senegal', flag: 'SEN' }
   ],
+
   J: [
-    {id:'irn',name:'IR Iran',flag:'🇮🇷'},
-    {id:'bih',name:'Bosnia & Herz.',flag:'🇧🇦'},
-    {id:'nor',name:'Norway',flag:'🇳🇴'},
-    {id:'ukr',name:'Ukraine',flag:'🇺🇦'}
+    { id: 'alg', name: 'Algeria', flag: 'ALG' },
+    { id: 'arg', name: 'Argentina', flag: 'ARG' },
+    { id: 'aut', name: 'Austria', flag: 'AUT' },
+    { id: 'jor', name: 'Jordan', flag: 'JOR' }
   ],
+
   K: [
-    {id:'ksa',name:'Saudi Arabia',flag:'🇸🇦'},
-    {id:'egy',name:'Egypt',flag:'🇪🇬'},
-    {id:'tur',name:'Türkiye',flag:'🇹🇷'},
-    {id:'czk',name:'Czechia',flag:'🇨🇿'}
+    { id: 'col', name: 'Colombia', flag: 'COL' },
+    { id: 'cod', name: 'DR Congo', flag: 'COD' },
+    { id: 'por', name: 'Portugal', flag: 'POR' },
+    { id: 'uzb', name: 'Uzbekistan', flag: 'UZB' }
   ],
+
   L: [
-    {id:'kor',name:'Korea Republic',flag:'🇰🇷'},
-    {id:'nzl',name:'New Zealand',flag:'🇳🇿'},
-    {id:'col',name:'Colombia',flag:'🇨🇴'},
-    {id:'sco',name:'Scotland',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'}
-  ],
+    { id: 'cro', name: 'Croatia', flag: 'CRO' },
+    { id: 'eng', name: 'England', flag: 'ENG' },
+    { id: 'gha', name: 'Ghana', flag: 'GHA' },
+    { id: 'pan', name: 'Panama', flag: 'PAN' }
+  ]
 };
 
 // Chronological fixture schedule
 // Matchday 1: Jun 11–23 | MD2: Jun 24–Jul 5 | MD3 (simultaneous pairs): Jul 6–13
 const FIXTURE_SCHEDULE = [
-  // ── MATCHDAY 1 ──
-  {date:'11 Jun',group:'A',home:'can',away:'mex'},
-  {date:'12 Jun',group:'A',home:'ury',away:'rsa'},
-  {date:'12 Jun',group:'B',home:'arg',away:'chi'},
-  {date:'13 Jun',group:'B',home:'per',away:'caf2'},
-  {date:'13 Jun',group:'C',home:'usa',away:'pan'},
-  {date:'14 Jun',group:'C',home:'bra',away:'par'},
-  {date:'14 Jun',group:'D',home:'fra',away:'mor'},
-  {date:'15 Jun',group:'D',home:'bel',away:'cro'},
-  {date:'15 Jun',group:'E',home:'ger',away:'jap'},
-  {date:'16 Jun',group:'E',home:'crc',away:'aus'},
-  {date:'16 Jun',group:'F',home:'esp',away:'civ'},
-  {date:'17 Jun',group:'F',home:'ser',away:'hun'},
-  {date:'17 Jun',group:'G',home:'eng',away:'tun'},
-  {date:'18 Jun',group:'G',home:'net',away:'sen'},
-  {date:'18 Jun',group:'H',home:'por',away:'pol'},
-  {date:'19 Jun',group:'H',home:'ngr',away:'aze'},
-  {date:'19 Jun',group:'I',home:'ita',away:'ecu'},
-  {date:'20 Jun',group:'I',home:'hon',away:'alg'},
-  {date:'20 Jun',group:'J',home:'irn',away:'bih'},
-  {date:'21 Jun',group:'J',home:'nor',away:'ukr'},
-  {date:'21 Jun',group:'K',home:'ksa',away:'egy'},
-  {date:'22 Jun',group:'K',home:'tur',away:'czk'},
-  {date:'22 Jun',group:'L',home:'kor',away:'nzl'},
-  {date:'23 Jun',group:'L',home:'col',away:'sco'},
-  // ── MATCHDAY 2 ──
-  {date:'24 Jun',group:'A',home:'mex',away:'ury'},
-  {date:'24 Jun',group:'A',home:'can',away:'rsa'},
-  {date:'25 Jun',group:'B',home:'arg',away:'per'},
-  {date:'25 Jun',group:'B',home:'chi',away:'caf2'},
-  {date:'25 Jun',group:'C',home:'usa',away:'bra'},
-  {date:'26 Jun',group:'C',home:'pan',away:'par'},
-  {date:'26 Jun',group:'D',home:'fra',away:'bel'},
-  {date:'27 Jun',group:'D',home:'mor',away:'cro'},
-  {date:'27 Jun',group:'E',home:'ger',away:'crc'},
-  {date:'28 Jun',group:'E',home:'jap',away:'aus'},
-  {date:'28 Jun',group:'F',home:'esp',away:'ser'},
-  {date:'29 Jun',group:'F',home:'civ',away:'hun'},
-  {date:'29 Jun',group:'G',home:'eng',away:'net'},
-  {date:'30 Jun',group:'G',home:'tun',away:'sen'},
-  {date:'30 Jun',group:'H',home:'por',away:'ngr'},
-  {date:'01 Jul',group:'H',home:'pol',away:'aze'},
-  {date:'01 Jul',group:'I',home:'ita',away:'hon'},
-  {date:'02 Jul',group:'I',home:'ecu',away:'alg'},
-  {date:'02 Jul',group:'J',home:'irn',away:'nor'},
-  {date:'03 Jul',group:'J',home:'bih',away:'ukr'},
-  {date:'03 Jul',group:'K',home:'ksa',away:'tur'},
-  {date:'04 Jul',group:'K',home:'egy',away:'czk'},
-  {date:'04 Jul',group:'L',home:'kor',away:'col'},
-  {date:'05 Jul',group:'L',home:'nzl',away:'sco'},
-  // ── MATCHDAY 3 (simultaneous within group) ──
-  {date:'06 Jul',group:'A',home:'mex',away:'rsa'},
-  {date:'06 Jul',group:'A',home:'can',away:'ury'},
-  {date:'07 Jul',group:'B',home:'arg',away:'caf2'},
-  {date:'07 Jul',group:'B',home:'chi',away:'per'},
-  {date:'07 Jul',group:'C',home:'usa',away:'par'},
-  {date:'07 Jul',group:'C',home:'bra',away:'pan'},
-  {date:'08 Jul',group:'D',home:'fra',away:'cro'},
-  {date:'08 Jul',group:'D',home:'bel',away:'mor'},
-  {date:'08 Jul',group:'E',home:'ger',away:'aus'},
-  {date:'09 Jul',group:'E',home:'jap',away:'crc'},
-  {date:'09 Jul',group:'F',home:'esp',away:'hun'},
-  {date:'09 Jul',group:'F',home:'civ',away:'ser'},
-  {date:'10 Jul',group:'G',home:'eng',away:'sen'},
-  {date:'10 Jul',group:'G',home:'net',away:'tun'},
-  {date:'10 Jul',group:'H',home:'por',away:'aze'},
-  {date:'11 Jul',group:'H',home:'pol',away:'ngr'},
-  {date:'11 Jul',group:'I',home:'ita',away:'alg'},
-  {date:'11 Jul',group:'I',home:'ecu',away:'hon'},
-  {date:'12 Jul',group:'J',home:'irn',away:'ukr'},
-  {date:'12 Jul',group:'J',home:'bih',away:'nor'},
-  {date:'12 Jul',group:'K',home:'ksa',away:'czk'},
-  {date:'13 Jul',group:'K',home:'egy',away:'tur'},
-  {date:'13 Jul',group:'L',home:'kor',away:'sco'},
-  {date:'13 Jul',group:'L',home:'nzl',away:'col'},
+  { date:'12 Jun', time:'00:30', group:'A', home:'mex', away:'rsa' },
+  { date:'12 Jun', time:'07:30', group:'A', home:'kor', away:'cze' },
+
+  { date:'13 Jun', time:'00:30', group:'B', home:'can', away:'bih' },
+  { date:'13 Jun', time:'06:30', group:'D', home:'usa', away:'par' },
+  { date:'13 Jun', time:'09:30', group:'D', home:'aus', away:'tur' },
+
+  { date:'14 Jun', time:'00:30', group:'B', home:'qat', away:'sui' },
+  { date:'14 Jun', time:'03:30', group:'C', home:'bra', away:'mar' },
+  { date:'14 Jun', time:'06:30', group:'C', home:'hai', away:'sco' },
+  { date:'14 Jun', time:'22:30', group:'E', home:'ger', away:'cuw' },
+
+  { date:'15 Jun', time:'01:30', group:'F', home:'ned', away:'jpn' },
+  { date:'15 Jun', time:'04:30', group:'E', home:'civ', away:'ecu' },
+  { date:'15 Jun', time:'07:30', group:'F', home:'swe', away:'tun' },
+  { date:'15 Jun', time:'21:30', group:'H', home:'esp', away:'cpv' },
+
+  { date:'16 Jun', time:'00:30', group:'G', home:'bel', away:'egy' },
+  { date:'16 Jun', time:'03:30', group:'H', home:'ksa', away:'uru' },
+  { date:'16 Jun', time:'06:30', group:'G', home:'irn', away:'nzl' },
+  { date:'16 Jun', time:'09:30', group:'J', home:'aut', away:'jor' },
+
+  { date:'17 Jun', time:'00:30', group:'I', home:'fra', away:'sen' },
+  { date:'17 Jun', time:'03:30', group:'I', home:'irq', away:'nor' },
+  { date:'17 Jun', time:'06:30', group:'J', home:'arg', away:'alg' },
+  { date:'17 Jun', time:'22:30', group:'K', home:'por', away:'cod' },
+
+  { date:'18 Jun', time:'01:30', group:'L', home:'eng', away:'cro' },
+  { date:'18 Jun', time:'04:30', group:'L', home:'gha', away:'pan' },
+  { date:'18 Jun', time:'07:30', group:'K', home:'uzb', away:'col' },
+  { date:'18 Jun', time:'21:30', group:'A', home:'cze', away:'rsa' },
+
+  // Matchday 2
+  { date:'19 Jun', time:'00:30', group:'B', home:'sui', away:'bih' },
+  { date:'19 Jun', time:'03:30', group:'B', home:'can', away:'qat' },
+  { date:'19 Jun', time:'06:30', group:'A', home:'mex', away:'kor' },
+
+  { date:'20 Jun', time:'00:30', group:'D', home:'usa', away:'aus' },
+  { date:'20 Jun', time:'03:30', group:'C', home:'sco', away:'mar' },
+  { date:'20 Jun', time:'06:00', group:'C', home:'bra', away:'hai' },
+  { date:'20 Jun', time:'07:30', group:'D', home:'tur', away:'par' },
+  { date:'20 Jun', time:'09:30', group:'F', home:'tun', away:'jpn' },
+  { date:'20 Jun', time:'22:30', group:'F', home:'ned', away:'swe' },
+
+  { date:'21 Jun', time:'01:30', group:'E', home:'ger', away:'civ' },
+  { date:'21 Jun', time:'05:30', group:'E', home:'ecu', away:'cuw' },
+  { date:'21 Jun', time:'21:30', group:'H', home:'esp', away:'ksa' },
+
+  { date:'22 Jun', time:'00:30', group:'G', home:'bel', away:'irn' },
+  { date:'22 Jun', time:'03:30', group:'H', home:'uru', away:'cpv' },
+  { date:'22 Jun', time:'06:30', group:'G', home:'nzl', away:'egy' },
+  { date:'22 Jun', time:'22:30', group:'J', home:'arg', away:'aut' },
+
+  { date:'23 Jun', time:'02:30', group:'I', home:'fra', away:'irq' },
+  { date:'23 Jun', time:'05:30', group:'I', home:'nor', away:'sen' },
+  { date:'23 Jun', time:'08:30', group:'J', home:'jor', away:'alg' },
+  { date:'23 Jun', time:'22:30', group:'K', home:'por', away:'uzb' },
+
+  { date:'24 Jun', time:'01:30', group:'L', home:'eng', away:'gha' },
+  { date:'24 Jun', time:'04:30', group:'L', home:'pan', away:'cro' },
+  { date:'24 Jun', time:'07:30', group:'K', home:'col', away:'cod' },
+
+  // Matchday 3
+  { date:'25 Jun', time:'00:30', group:'B', home:'sui', away:'can' },
+  { date:'25 Jun', time:'00:30', group:'B', home:'bih', away:'qat' },
+  { date:'25 Jun', time:'03:30', group:'C', home:'sco', away:'bra' },
+  { date:'25 Jun', time:'03:30', group:'C', home:'mar', away:'hai' },
+  { date:'25 Jun', time:'06:30', group:'A', home:'cze', away:'mex' },
+  { date:'25 Jun', time:'06:30', group:'A', home:'rsa', away:'kor' },
+
+  { date:'26 Jun', time:'01:30', group:'E', home:'cuw', away:'civ' },
+  { date:'26 Jun', time:'01:30', group:'E', home:'ecu', away:'ger' },
+  { date:'26 Jun', time:'04:30', group:'F', home:'jpn', away:'swe' },
+  { date:'26 Jun', time:'04:30', group:'F', home:'tun', away:'ned' },
+  { date:'26 Jun', time:'07:30', group:'D', home:'tur', away:'usa' },
+  { date:'26 Jun', time:'07:30', group:'D', home:'par', away:'aus' },
+
+  { date:'27 Jun', time:'00:30', group:'I', home:'nor', away:'fra' },
+  { date:'27 Jun', time:'00:30', group:'I', home:'sen', away:'irq' },
+  { date:'27 Jun', time:'05:30', group:'H', home:'cpv', away:'ksa' },
+  { date:'27 Jun', time:'05:30', group:'H', home:'uru', away:'esp' },
+  { date:'27 Jun', time:'08:30', group:'G', home:'egy', away:'irn' },
+  { date:'27 Jun', time:'08:30', group:'G', home:'nzl', away:'bel' },
+
+  { date:'28 Jun', time:'02:30', group:'L', home:'pan', away:'eng' },
+  { date:'28 Jun', time:'02:30', group:'L', home:'cro', away:'gha' },
+  { date:'28 Jun', time:'05:00', group:'K', home:'col', away:'por' },
+  { date:'28 Jun', time:'07:30', group:'J', home:'alg', away:'aut' },
+  { date:'28 Jun', time:'07:30', group:'J', home:'jor', away:'arg' },
+  { date:'28 Jun', time:'07:30', group:'K', home:'cod', away:'uzb' }
 ];
 
 const TRACKS = [
