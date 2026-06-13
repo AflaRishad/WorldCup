@@ -1,4 +1,4 @@
-WorldCup 2026 Predictor
+#WorldCup 2026 Predictor
 
 Pick winners for the whole World Cup. Group stage, knockout bracket, champion.
 
