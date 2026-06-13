@@ -10,33 +10,38 @@
 </head>
 <body>
 
-<div class="bg-dots"></div>
-
 <div id="app">
 
 <!-- ============================================================ AUTH PAGE -->
 <div id="page-auth">
-  <div class="auth-wrap">
-    <div class="auth-brand">
-      <div class="eyebrow">⚽ Prediction Challenge</div>
-      <h1>World Cup<br><em>2026</em> Predictor</h1>
-      <p> USA · Canada · Mexico.</p>
+  <div class="auth-split">
+    <div class="auth-left">
+      <div class="auth-badge">⚽ FIFA World Cup 2026</div>
+      <h1>Predict.<br><span class="hl">Win.</span><br>Repeat.</h1>
+      <p>Build your complete bracket for the 2026 World Cup across USA, Canada & Mexico. 48 teams. 104 matches. One champion.</p>
+      <div class="auth-pills">
+        <div class="auth-pill">🇺🇸 USA</div>
+        <div class="auth-pill">🇨🇦 Canada</div>
+        <div class="auth-pill">🇲🇽 Mexico</div>
+      </div>
     </div>
-    <div class="auth-card">
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" id="inputName" placeholder="e.g. Afla Rishad" autocomplete="off">
+    <div class="auth-right">
+      <div class="auth-card">
+        <div class="auth-card-head">Start your bracket</div>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="inputName" placeholder="e.g. Afla Rishad" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Favourite Team</label>
+          <select id="inputTeam">
+            <option value="">Pick your team…</option>
+          </select>
+        </div>
+        <button class="btn-cta" onclick="login()">
+          Start Predicting <span class="btn-arrow">→</span>
+        </button>
       </div>
-      <div class="form-group">
-        <label>Favorite Team</label>
-        <select id="inputTeam">
-          <option value="">Choose your team...</option>
-        </select>
-      </div>
-
-      <button class="btn-cta" onclick="login()">
-        Start Predicting <span>→</span>
-      </button>
     </div>
   </div>
 </div>
@@ -48,8 +53,8 @@
   <header class="hdr">
     <div class="hdr-inner">
       <div class="hdr-brand">
-        <span class="trophy">🏆</span>
-        <div class="name">WC <span>2026</span></div>
+        <div class="hdr-logo">🏆</div>
+        <span class="hdr-title">WC <em>2026</em></span>
       </div>
       <nav class="hdr-nav">
         <button class="hdr-nav-btn active" onclick="setPage('dashboard')">Dashboard</button>
@@ -58,44 +63,55 @@
         <button class="hdr-nav-btn" onclick="setPage('stats')">Stats</button>
       </nav>
       <div class="hdr-right">
-        <div class="hdr-user-info">
+        <div class="hdr-meta">
           <div class="hdr-username" id="hdrName"></div>
           <div class="hdr-pct" id="hdrPct"></div>
         </div>
         <div class="avatar" id="hdrAvatar"></div>
-        <button class="hdr-logout-btn" onclick="logout()" title="Logout">🚪</button>
+        <button class="hdr-logout" onclick="logout()" title="Logout">⏻</button>
       </div>
     </div>
   </header>
 
-  <!-- Pages -->
   <div class="content">
 
     <!-- DASHBOARD -->
     <div id="pg-dashboard">
       <div id="championDisplay"></div>
-      <div class="hero-banner" id="heroBanner">
+
+      <div class="hero-banner">
         <div class="hero-text">
-          <div class="greeting">Welcome back,</div>
+          <div class="hero-eyebrow">Welcome back</div>
           <h2 id="heroName">Predictor</h2>
-          <p id="heroSub">Click match teams to set your picks</p>
+          <p id="heroSub">Tap match teams to set your picks</p>
         </div>
-        <div class="progress-ring-wrap">
-          <div class="pct-num" id="heroPct">0%</div>
-          <div class="pct-lbl">Complete</div>
+        <div class="hero-pct-wrap">
+          <div class="hero-pct-ring">
+            <svg viewBox="0 0 80 80" class="ring-svg">
+              <circle cx="40" cy="40" r="34" class="ring-bg"/>
+              <circle cx="40" cy="40" r="34" class="ring-fill" id="ringFill"/>
+            </svg>
+            <div class="ring-text">
+              <div class="pct-num" id="heroPct">0%</div>
+              <div class="pct-lbl">done</div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="stats-grid" id="dashStats"></div>
-      <div class="action-bar" style="margin-top:1.25rem">
-        <input class="search-box" id="searchBox" placeholder="🔍 Search teams..." oninput="doSearch()">
+
+      <div class="action-bar">
+        <input class="search-box" id="searchBox" placeholder="🔍 Search teams…" oninput="doSearch()">
         <button class="action-btn" onclick="undoLast()">↩ Undo</button>
         <button class="action-btn" onclick="shareLink()">🔗 Share</button>
         <button class="action-btn" onclick="exportPredictions()">📤 Export</button>
         <button class="action-btn danger" onclick="resetAll()">🗑 Reset</button>
       </div>
-      <div class="section-head" style="margin-top:1.5rem">
-        <h2>Group Overview</h2>
-        <span class="tag-outline">All Groups</span>
+
+      <div class="section-head">
+        <h2>Groups</h2>
+        <span class="tag-outline">Overview</span>
       </div>
       <div class="dash-groups" id="dashGroups"></div>
     </div>
@@ -104,13 +120,13 @@
     <div id="pg-groups" class="hidden">
       <div class="section-head">
         <h2>Group Stage</h2>
-        <span class="tag">Pick Winners</span>
+        <span class="tag">Pick Winner or Draw</span>
       </div>
       <div class="action-bar">
-        <input class="search-box" id="searchBox2" placeholder="🔍 Search teams..." oninput="doSearch2()">
+        <input class="search-box" id="searchBox2" placeholder="🔍 Search teams…" oninput="doSearch2()">
         <button class="action-btn" onclick="undoLast()">↩ Undo</button>
       </div>
-      <div class="groups-grid" id="groupsGrid"></div>
+      <div id="groupsGrid"></div>
     </div>
 
     <!-- BRACKET -->
@@ -119,9 +135,7 @@
         <h2>Knockout Bracket</h2>
         <span class="tag">Tap to pick</span>
       </div>
-      <div class="bracket-wrap">
-        <div class="bracket" id="bracketInner"></div>
-      </div>
+      <div class="bracket-outer" id="bracketOuter"></div>
     </div>
 
     <!-- STATS -->
@@ -132,14 +146,10 @@
       <div class="stats-page-grid" id="statsGrid"></div>
     </div>
 
-  </div>
+  </div><!-- /content -->
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-left">
-      <div class="creator">Built by <span>Afla Rishad</span> ⚡</div>
-      <div class="sub">© 2026 · World Cup 2026 Predictor</div>
-    </div>
+    <div>Built by <span class="ft-name">Afla Rishad</span> ⚡ &nbsp;·&nbsp; © 2026</div>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/AflaRishad" target="_blank">LinkedIn</a>
       <a href="https://portfolio-red-rho-95.vercel.app/" target="_blank">Portfolio</a>
@@ -148,56 +158,67 @@
 
   <!-- Mobile nav -->
   <nav class="mobile-nav">
-    <div class="mobile-nav-inner">
-      <button class="mob-btn active" onclick="setPage('dashboard')"><span class="ico">🏠</span><span class="lbl">Home</span></button>
-      <button class="mob-btn" onclick="setPage('groups')"><span class="ico">⚽</span><span class="lbl">Groups</span></button>
-      <button class="mob-btn" onclick="setPage('bracket')"><span class="ico">🎯</span><span class="lbl">Bracket</span></button>
-      <button class="mob-btn" onclick="setPage('stats')"><span class="ico">📊</span><span class="lbl">Stats</span></button>
-    </div>
+    <button class="mob-btn active" onclick="setPage('dashboard')"><span>🏠</span><span>Home</span></button>
+    <button class="mob-btn" onclick="setPage('groups')"><span>⚽</span><span>Groups</span></button>
+    <button class="mob-btn" onclick="setPage('bracket')"><span>🎯</span><span>Bracket</span></button>
+    <button class="mob-btn" onclick="setPage('stats')"><span>📊</span><span>Stats</span></button>
   </nav>
 
 </div><!-- /page-main -->
 
 </div><!-- /app -->
 
-<!-- Music Player (persistent, outside pages) -->
-<div class="music-player" id="musicPlayer" style="display:none">
-  <div class="music-pill" id="musicPill" onclick="pillClick(event)">
-    <div class="music-icon" id="musicIcon">♪</div>
-    <span class="pill-track" id="pillTrack">Loading...</span>
-    <button class="pill-mini-btn play-btn" id="playBtn" onclick="event.stopPropagation(); togglePlay()">▶</button>
-    <button class="pill-mini-btn" onclick="event.stopPropagation(); nextTrack()">⏭</button>
+<!-- Music Player -->
+<div class="music-bar" id="musicBar" style="display:none">
+  <div class="music-bar-inner">
+    <div class="music-dot" id="musicDot">♪</div>
+    <div class="music-info">
+      <div class="music-title" id="musicTitle">Loading…</div>
+      <div class="music-artist" id="musicArtist"></div>
+    </div>
+    <div class="music-controls">
+      <button class="mc-btn" onclick="prevTrack()">⏮</button>
+      <button class="mc-btn play" id="playBtn" onclick="togglePlay()">▶</button>
+      <button class="mc-btn" onclick="nextTrack()">⏭</button>
+    </div>
+    <button class="mc-btn expand-btn" onclick="toggleMusicExpand()" title="Open player">⤢</button>
   </div>
 </div>
 
-<!-- Expanded Music Overlay (separate div) -->
-<div class="music-player" id="musicExpanded" style="display:none; bottom:1rem; right:1rem;">
-  <div class="music-pill expanded">
-    <div class="expand-row">
-      <div class="track-info">
-        <div class="track-title" id="expTrackName">Illuminate</div>
-        <div class="track-art" id="expTrackArt">World Cup 2026</div>
-      </div>
-      <button class="close-btn" onclick="closeExpand()">✕</button>
-    </div>
-    <div class="controls-row">
-      <button class="c-btn" onclick="prevTrack()">⏮</button>
-      <button class="c-btn" id="shuffleBtn" onclick="shuffleToggle()" title="Shuffle">🔀</button>
-      <button class="c-btn c-play" id="playBtn2" onclick="togglePlay()">▶</button>
-      <button class="c-btn" id="repeatBtn" onclick="repeatToggle()" title="Repeat">🔁</button>
-      <button class="c-btn" onclick="nextTrack()">⏭</button>
-    </div>
-    <div class="vol-row">
-      <span>🔊</span>
-      <input type="range" min="0" max="100" value="70" id="volSlider" oninput="setVol(this.value)">
-      <span id="volVal">70</span>
-    </div>
-    <div class="music-note">Add audio URLs in JS config</div>
-  </div>
+<!-- YouTube iframe (hidden) -->
+<div id="ytContainer" style="position:fixed;bottom:-200px;right:0;width:1px;height:1px;overflow:hidden;pointer-events:none;z-index:-1;">
+  <div id="ytPlayer"></div>
 </div>
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
+
+<!-- Music Modal -->
+<div class="music-modal-bg" id="musicModalBg" onclick="closeMusicModal()" style="display:none"></div>
+<div class="music-modal" id="musicModal" style="display:none">
+  <div class="mm-head">
+    <div class="mm-disc" id="mmDisc">🎵</div>
+    <div>
+      <div class="mm-title" id="mmTitle">Track Name</div>
+      <div class="mm-artist" id="mmArtist">Artist</div>
+    </div>
+    <button class="mm-close" onclick="closeMusicModal()">✕</button>
+  </div>
+  <div class="mm-controls">
+    <button class="mmc-btn" onclick="shuffleToggle()" id="shuffleBtn" title="Shuffle">🔀</button>
+    <button class="mmc-btn" onclick="prevTrack()">⏮</button>
+    <button class="mmc-btn play" id="playBtn2" onclick="togglePlay()">▶</button>
+    <button class="mmc-btn" onclick="nextTrack()">⏭</button>
+    <button class="mmc-btn" onclick="repeatToggle()" id="repeatBtn" title="Repeat">🔁</button>
+  </div>
+  <div class="mm-vol">
+    <span>🔈</span>
+    <input type="range" min="0" max="100" value="70" id="volSlider" oninput="setVol(this.value)">
+    <span>🔊</span>
+  </div>
+  <div class="mm-playlist" id="mmPlaylist"></div>
+  <div class="mm-note">▶ YouTube audio — ensure browser allows autoplay</div>
+</div>
 
 <script src="script.js"></script>
 </body>
