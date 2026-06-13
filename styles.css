@@ -99,23 +99,13 @@ body {
   width: fit-content;
 }
 
-.auth-left h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.0;
-  letter-spacing: -0.04em;
-  color: var(--white);
-}
-.auth-left h1 .hl {
-  color: var(--green);
-  font-style: italic;
-}
-
 .auth-left p {
-  color: #9CA3AF;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  max-width: 380px;
+  color: var(--white);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  max-width: 420px;
 }
 
 .auth-pills {
@@ -149,15 +139,6 @@ body {
   width: 100%;
   max-width: 400px;
   box-shadow: var(--shadow-lg);
-}
-
-.auth-card-head {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1.5px solid var(--gray-lt);
 }
 
 .form-group { margin-bottom: 1.1rem; }
@@ -285,13 +266,16 @@ body {
 .hdr-logout {
   background: none;
   border: 1.5px solid var(--border);
-  color: var(--gray);
+  color: var(--black);
   cursor: pointer;
   border-radius: 8px;
-  padding: 0.3rem 0.55rem;
-  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s;
-  font-family: var(--font);
 }
 .hdr-logout:hover { border-color: var(--red); color: var(--red); }
 
@@ -894,7 +878,7 @@ body {
   }
   .match-team { font-size: 0.72rem; padding: 0.28rem 0.3rem; gap: 0.25rem; }
   .team-flag { font-size: 0.95rem; }
-  .auth-left h1 { font-size: 2.2rem; }
+  .auth-left p { font-size: 1.6rem; }
   .hero-pct-ring { width: 72px; height: 72px; }
   .pct-num { font-size: 1.1rem; }
 }
