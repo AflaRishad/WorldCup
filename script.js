@@ -17,8 +17,8 @@ const GROUPS = {
   C: [
     { id: 'bra', name: 'Brazil',   flag: '🇧🇷' },
     { id: 'hai', name: 'Haiti',    flag: '🇭🇹' },
-    { id: 'mor', name: 'Morocco',  flag: '🇲🇦' },
-    { id: 'sco', name: 'Scotland', flag: 'sc' }
+    { id: 'mar', name: 'Morocco',  flag: '🇲🇦' },
+    { id: 'sco', name: 'Scotland', flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿' }
   ],
   D: [
     { id: 'aus', name: 'Australia', flag: '🇦🇺' },
@@ -70,7 +70,7 @@ const GROUPS = {
   ],
   L: [
     { id: 'cro', name: 'Croatia', flag: '🇭🇷' },
-    { id: 'eng', name: 'England', flag: 'en' },
+    { id: 'eng', name: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
     { id: 'gha', name: 'Ghana',   flag: '🇬🇭' },
     { id: 'pan', name: 'Panama',  flag: '🇵🇦' }
   ]
