@@ -663,7 +663,7 @@ function initMusic() {
   document.getElementById('musicBar').style.display = '';
   updateMusicUI();
   // Load YouTube API
-  if (!window.YT) {
+  if (!window.YT || !window.YT.Player) {
     const tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
     document.head.appendChild(tag);
@@ -678,30 +678,37 @@ window.onYouTubeIframeAPIReady = function() {
     videoId: TRACKS[curTrack].ytId,
     playerVars: {
       autoplay: 0, controls: 0, disablekb: 1,
-      fs: 0, iv_load_policy: 3, modestbranding: 1
+      fs: 0, iv_load_policy: 3, modestbranding: 1,
+      origin: location.origin
     },
     events: {
-      onReady: () => { ytReady = true; },
+      onReady: (e) => {
+        ytReady = true;
+        e.target.setVolume(70);
+      },
       onStateChange: (e) => {
         if (e.data === YT.PlayerState.ENDED) {
-          if (isRepeat) ytPlayer.seekTo(0);
+          if (isRepeat) { ytPlayer.seekTo(0); ytPlayer.playVideo(); }
           else nextTrack();
         }
+        if (e.data === YT.PlayerState.PLAYING) { isPlaying = true; updateMusicUI(); }
+        if (e.data === YT.PlayerState.PAUSED) { isPlaying = false; updateMusicUI(); }
+      },
+      onError: () => {
+        showToast('Track unavailable, skipping…');
+        nextTrack();
       }
     }
   });
 };
 
 function togglePlay() {
-  if (!ytReady) { showToast('Player loading…'); return; }
+  if (!ytReady || !ytPlayer) { showToast('Player loading…'); return; }
   if (isPlaying) {
     ytPlayer.pauseVideo();
-    isPlaying = false;
   } else {
     ytPlayer.playVideo();
-    isPlaying = true;
   }
-  updateMusicUI();
 }
 
 function nextTrack() {
