@@ -151,37 +151,15 @@ const FIXTURE_SCHEDULE = [
 ];
 
 const TRACKS = [
-  {
-    title: 'Dai Dai',
-    artist: 'Shakira ft. Burna Boy',
-    ytId: 'fcnDmrtj6Sk'
-  },
-  {
-    title: 'Illuminate',
-    artist: 'FIFA World Cup 2026',
-    ytId: 'im0FLUw7wtY'
-  },
-  {
-    title: 'Champion',
-    artist: 'IShowSpeed',
-    ytId: 'vrY1THC_NQE'
-  },
-  {
-    title: 'Goals',
-    artist: 'LISA, Anitta & Rema',
-    ytId: 'safzyuZNCGI'
-  },
-  {
-    title: 'DNA (More Than a Game)',
-    artist: 'Andrea Bocelli, David Guetta, Megan Thee Stallion & EJAE',
-    ytId: 'alTzdOAAMhc'
-  },
-  {
-    title: 'Game Time',
-    artist: 'Future & Tyla',
-    ytId: 'JLucCHwY-2c'
-  }
+  { title: 'Dai Dai', ytId: 'fcnDmrtj6Sk' },
+  { title: 'Illuminate', ytId: 'GK9HRwG8Wqo' },
+  { title: 'Champion', ytId: 'vrY1THC_NQE' },
+  { title: 'Goals', ytId: '_V9LLt69jDw' },
+  { title: 'DNA (More Than a Game)', ytId: '7Mr3B6thNrQ' },
+  { title: 'Game Time', ytId: '56VyFAm76wk' }
 ];
+
+
 // ============================================================
 // STATE
 // ============================================================
