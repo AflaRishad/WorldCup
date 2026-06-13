@@ -150,14 +150,12 @@ const FIXTURE_SCHEDULE = [
   { date:'28 Jun', time:'07:30', group:'K', home:'cod', away:'uzb' }
 ];
 
-// YouTube video IDs for music (these are official/widely available WC anthems)
+// YouTube video IDs — songs from the Official FIFA World Cup 2026 Album
 const TRACKS = [
-  { title: 'Waka Waka',         artist: 'Shakira',                    ytId: 'pRpeEdMmmQ0' },
-  { title: 'The Cup of Life',   artist: 'Ricky Martin',               ytId: 'uMZqQDmm7OQ' },
-  { title: 'We Are The Champions', artist: 'Queen',                   ytId: '04854XqcfBY' },
-  { title: 'Wavin\' Flag',      artist: 'K\'naan',                    ytId: 'pSFMd7TEiuI' },
-  { title: 'La La La',          artist: 'Shakira ft. Carlinhos Brown', ytId: 'jB9lOeMMVA8' },
-  { title: 'Live It Up',        artist: 'Nicky Jam, Will Smith & Era', ytId: 'v3KIQS9KBOI' },
+  { title: 'DNA (More Than a Game)', artist: 'A. Bocelli, D. Guetta, Megan Thee Stallion & EJAE', ytId: 'alTzdOAAMhc' },
+  { title: 'Dai Dai',                artist: 'Shakira ft. Burna Boy',                              ytId: 'H-IGHes_iig' },
+  { title: 'Goals',                  artist: 'LISA, Anitta & Rema',                                ytId: 'Kbw-OpszClI' },
+  { title: 'Game Time',               artist: 'Future & Tyla',                                      ytId: 'JLucCHwY-2c' },
 ];
 
 // ============================================================
