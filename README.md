@@ -1,4 +1,4 @@
-#WorldCup 2026 Predictor
+# WC 2026 Predictor
 
 Pick winners for the whole World Cup. Group stage, knockout bracket, champion.
 
@@ -25,4 +25,4 @@ Just open `index.html` in a browser. No installation needed.
 
 ---
 
-Made by Me (Obivously) | because why not and i'm bored
+Made by Me (Obviosuly) | because why not and i'm bored
