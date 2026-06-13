@@ -150,14 +150,38 @@ const FIXTURE_SCHEDULE = [
   { date:'28 Jun', time:'07:30', group:'K', home:'cod', away:'uzb' }
 ];
 
-// YouTube video IDs — songs from the Official FIFA World Cup 2026 Album
 const TRACKS = [
-  { title: 'DNA (More Than a Game)', artist: 'A. Bocelli, D. Guetta, Megan Thee Stallion & EJAE', ytId: 'alTzdOAAMhc' },
-  { title: 'Dai Dai',                artist: 'Shakira ft. Burna Boy',                              ytId: 'H-IGHes_iig' },
-  { title: 'Goals',                  artist: 'LISA, Anitta & Rema',                                ytId: 'Kbw-OpszClI' },
-  { title: 'Game Time',               artist: 'Future & Tyla',                                      ytId: 'JLucCHwY-2c' },
+  {
+    title: 'Dai Dai',
+    artist: 'Shakira ft. Burna Boy',
+    ytId: 'fcnDmrtj6Sk'
+  },
+  {
+    title: 'Illuminate',
+    artist: 'FIFA World Cup 2026',
+    ytId: 'im0FLUw7wtY'
+  },
+  {
+    title: 'Champion',
+    artist: 'IShowSpeed',
+    ytId: 'vrY1THC_NQE'
+  },
+  {
+    title: 'Goals',
+    artist: 'LISA, Anitta & Rema',
+    ytId: 'safzyuZNCGI'
+  },
+  {
+    title: 'DNA (More Than a Game)',
+    artist: 'Andrea Bocelli, David Guetta, Megan Thee Stallion & EJAE',
+    ytId: 'alTzdOAAMhc'
+  },
+  {
+    title: 'Game Time',
+    artist: 'Future & Tyla',
+    ytId: 'JLucCHwY-2c'
+  }
 ];
-
 // ============================================================
 // STATE
 // ============================================================
